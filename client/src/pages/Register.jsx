@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import axios from 'axios'
+import api from '../api'
 import { useApp } from '../context/AppContext'
 
 const Register = () => {
@@ -15,7 +15,7 @@ const Register = () => {
     setLoading(true)
     setError('')
     try {
-      const { data } = await axios.post('/api/auth/register', form)
+      const { data } = await api.post('/api/auth/register', form)
       login(data.user, data.token)
       navigate('/generate')
     } catch (err) {

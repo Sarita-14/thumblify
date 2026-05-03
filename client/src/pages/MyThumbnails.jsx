@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import axios from 'axios'
+import api from '../api'
 import { useApp } from '../context/AppContext'
 import { useNavigate } from 'react-router-dom'
 
@@ -12,7 +12,7 @@ const MyThumbnails = () => {
   useEffect(() => {
     const fetchThumbnails = async () => {
       try {
-        const { data } = await axios.get('/api/thumbnail/my-thumbnails', {
+        const { data } = await api.get('/api/thumbnail/my-thumbnails', {
           headers: { Authorization: `Bearer ${token}` }
         })
         setThumbnails(data)

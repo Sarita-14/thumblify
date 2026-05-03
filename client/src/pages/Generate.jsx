@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import axios from 'axios'
+import api from '../api'
 import { useApp } from '../context/AppContext'
 import { useNavigate } from 'react-router-dom'
 
@@ -21,10 +21,10 @@ const Generate = () => {
     setError('')
     setImageData(null)
     try {
-      const { data } = await axios.post('/api/thumbnail/generate', form, {
-        headers: { Authorization: `Bearer ${token}` },
-        timeout: 120000,
-      })
+      const { data } = await api.post('/api/thumbnail/generate', form, {
+  headers: { Authorization: `Bearer ${token}` },
+  timeout: 120000,
+})
       setImageData(data.imageData)
     } catch (err) {
       setError(err.response?.data?.message || 'Generation failed. Please try again.')
