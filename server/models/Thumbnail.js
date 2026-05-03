@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 
 const thumbnailSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
@@ -9,4 +9,4 @@ const thumbnailSchema = new mongoose.Schema({
   aspectRatio: { type: String },
 }, { timestamps: true })
 
-export default mongoose.model('Thumbnail', thumbnailSchema)
+module.exports = mongoose.model('Thumbnail', thumbnailSchema)

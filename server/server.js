@@ -22,7 +22,7 @@ app.get('/', (req, res) => {
   res.send('Server is running!')
 })
 
-// Connect DB and export app for Vercel
 connectDB()
 
-export default app
+// THIS LINE IS CRITICAL FOR VERCEL
+module.exports = app
