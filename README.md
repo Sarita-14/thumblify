@@ -11,33 +11,11 @@ Download thumbnails in high resolution PNG
 Fully responsive design
 
 🛠️ Tech Stack
-Frontend
-
-React.js (Vite)
-Tailwind CSS
-Axios
-React Router DOM
-
-Backend
-
-Node.js
-Express.js
-MongoDB (Mongoose)
-JWT Authentication
-bcryptjs
+Frontend:React.js (Vite),Tailwind CSS,Axios,React Router DOM
+Backend: Node.js,Express.js,MongoDB (Mongoose),JWT Authentication,bcryptjs
 
 AI & Deployment
-
-Hugging Face Inference API (FLUX.1-schnell)
-Vercel (Frontend + Backend)
-MongoDB Atlas
-
-
-Prerequisites
-
-Node.js installed
-MongoDB installed locally
-Hugging Face account (free)
+Hugging Face Inference API (FLUX.1-schnell),Vercel (Frontend + Backend),MongoDB Atlas
 
 Project Structure
 thumblify/
