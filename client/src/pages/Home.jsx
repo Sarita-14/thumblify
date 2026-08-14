@@ -148,20 +148,6 @@ const Home = () => {
           </button>
         </div>
 
-        {/* Stats */}
-        <div className="flex items-center gap-12 mb-20">
-          {[
-            { value: `${count.toLocaleString()}+`, label: 'Thumbnails Created' },
-            { value: '5K+', label: 'Happy Creators' },
-            { value: '4.9/5', label: 'User Rating' },
-          ].map((s, i) => (
-            <div key={i} className="text-center">
-              <div className="text-2xl md:text-3xl font-extrabold text-white">{s.value}</div>
-              <div className="text-xs text-gray-500 mt-1 font-medium">{s.label}</div>
-            </div>
-          ))}
-        </div>
-
         {/* Demo Preview Cards */}
         <div className="w-full max-w-5xl grid grid-cols-3 gap-4 mb-20">
           {[
@@ -194,7 +180,11 @@ const Home = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
-              icon: '⚡',
+              icon: (
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              ),
               title: 'Lightning Fast AI',
               desc: 'Generate stunning thumbnails in seconds using state-of-the-art AI image generation models.',
               gradient: 'from-blue-500/15 to-blue-600/5',
@@ -202,7 +192,14 @@ const Home = () => {
               hover: 'hover:border-blue-500/40 hover:shadow-blue-500/10',
             },
             {
-              icon: '🎨',
+              icon: (
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="1" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 3c4.97 0 9 4.03 9 9s-4.03 9-9 9-9-4.03-9-9 4.03-9 9-9z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 12a5 5 0 1010 0 5 5 0 01-10 0z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 7v1m0 8v1M5.5 12h1m8.5 0h1" />
+                </svg>
+              ),
               title: 'Multiple Styles',
               desc: 'Choose from Cinematic, Cartoon, Minimalist, Neon Glow and more creative styles.',
               gradient: 'from-purple-500/15 to-purple-600/5',
@@ -210,7 +207,11 @@ const Home = () => {
               hover: 'hover:border-purple-500/40 hover:shadow-purple-500/10',
             },
             {
-              icon: '💾',
+              icon: (
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+              ),
               title: 'Save & Download',
               desc: 'All thumbnails saved to your account. Download anytime in high resolution PNG.',
               gradient: 'from-green-500/15 to-green-600/5',
@@ -218,7 +219,14 @@ const Home = () => {
               hover: 'hover:border-green-500/40 hover:shadow-green-500/10',
             },
             {
-              icon: '🎯',
+              icon: (
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="9" strokeWidth={1.5} />
+                  <circle cx="12" cy="12" r="6" strokeWidth={1.5} />
+                  <circle cx="12" cy="12" r="3" strokeWidth={1.5} />
+                  <circle cx="12" cy="12" r="1" fill="currentColor" />
+                </svg>
+              ),
               title: 'Custom Colors',
               desc: 'Pick your perfect color scheme — Red & Black, Blue & White, Neon, and many more.',
               gradient: 'from-red-500/15 to-red-600/5',
@@ -226,7 +234,12 @@ const Home = () => {
               hover: 'hover:border-red-500/40 hover:shadow-red-500/10',
             },
             {
-              icon: '📐',
+              icon: (
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6" />
+                </svg>
+              ),
               title: 'Aspect Ratios',
               desc: 'Generate in 16:9, 4:3, 1:1 or 9:16. Perfect for YouTube, Instagram and more.',
               gradient: 'from-yellow-500/15 to-yellow-600/5',
@@ -234,9 +247,14 @@ const Home = () => {
               hover: 'hover:border-yellow-500/40 hover:shadow-yellow-500/10',
             },
             {
-              icon: '🔒',
+              icon: (
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2h-1.172a2 2 0 00-1.414.586l-1.414 1.414a2 2 0 01-2.828 0l-1.414-1.414A2 2 0 006.172 9H5a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 11a1 1 0 100-2 1 1 0 000 2z" />
+                </svg>
+              ),
               title: 'Secure & Private',
-              desc: 'Your thumbnails are private to your account. Secured with JWT authentication.',
+              desc: 'Your thumbnails are private to your account.',
               gradient: 'from-cyan-500/15 to-cyan-600/5',
               border: 'border-cyan-500/20',
               hover: 'hover:border-cyan-500/40 hover:shadow-cyan-500/10',
@@ -246,7 +264,7 @@ const Home = () => {
               key={i}
               className={`bg-gradient-to-br ${f.gradient} border ${f.border} ${f.hover} rounded-2xl p-6 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 cursor-default`}
             >
-              <div className="text-3xl mb-4">{f.icon}</div>
+              <div className="text-blue-400 mb-4">{f.icon}</div>
               <h3 className="text-lg font-bold mb-2 text-white">{f.title}</h3>
               <p className="text-gray-500 text-sm leading-relaxed">{f.desc}</p>
             </div>
@@ -273,7 +291,6 @@ const Home = () => {
 
       {/* FOOTER */}
       <footer className="border-t border-white/5 py-8 text-center">
-        <p className="text-gray-600 text-sm">© 2025 Thumblify. Built with React & AI.</p>
       </footer>
     </div>
   )
