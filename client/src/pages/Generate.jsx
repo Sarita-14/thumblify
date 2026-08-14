@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import api from '../api'
-import { useApp } from '../context/AppContext'
+import { useApp } from '../context/useApp'
 import { useNavigate } from 'react-router-dom'
 
 const STYLES = ['Cinematic', 'Cartoon', 'Minimalist', 'Bold & Vibrant', 'Dark Theme', 'Neon Glow']

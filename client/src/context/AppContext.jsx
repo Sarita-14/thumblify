@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from 'react'
 
-const AppContext = createContext()
+export const AppContext = createContext()
 
 export const AppProvider = ({ children }) => {
   const [user, setUser] = useState(
@@ -30,5 +30,3 @@ export const AppProvider = ({ children }) => {
     </AppContext.Provider>
   )
 }
-
-export const useApp = () => useContext(AppContext)

@@ -1,5 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
-import { useApp } from './context/AppContext'
+import { useApp } from './context/useApp'
 import Home from './pages/Home'
 import Login from './pages/Login'
 import Register from './pages/Register'

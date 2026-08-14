@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import api from '../api'
-import { useApp } from '../context/AppContext'
+import { useApp } from '../context/useApp'
 
 const Register = () => {
   const [form, setForm] = useState({ name: '', email: '', password: '' })
