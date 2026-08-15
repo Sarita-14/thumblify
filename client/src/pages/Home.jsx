@@ -81,6 +81,7 @@ const Navbar = ({ navigate, user, logout }) => {
 const Home = () => {
   const navigate = useNavigate()
   const { user, logout } = useApp()
+  // eslint-disable-next-line no-unused-vars
   const [count, setCount] = useState(0)
 
   useEffect(() => {

@@ -1,9 +1,11 @@
-import express from 'express'
-import cors from 'cors'
-import 'dotenv/config'
-import connectDB from './config/db.js'
-import authRoutes from './routes/authRoutes.js'
-import thumbnailRoutes from './routes/thumbnailRoutes.js'
+const dns = require('dns')
+dns.setServers(['8.8.8.8', '8.8.4.4'])
+const express = require('express')
+const cors = require('cors')
+require('dotenv/config')
+const connectDB = require('./config/db.js')
+const authRoutes = require('./routes/authRoutes.js')
+const thumbnailRoutes = require('./routes/thumbnailRoutes.js')
 
 const app = express()
 
@@ -24,5 +26,9 @@ app.get('/', (req, res) => {
 
 connectDB()
 
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000
+  app.listen(PORT, () => console.log(`Server running on port ${PORT}`))
+}
 // THIS LINE IS CRITICAL FOR VERCEL
 module.exports = app

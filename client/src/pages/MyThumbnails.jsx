@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import api from '../api'
 import { useApp } from '../context/useApp'
 import { useNavigate } from 'react-router-dom'
@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom'
 const MyThumbnails = () => {
   const [thumbnails, setThumbnails] = useState([])
   const [loading, setLoading] = useState(true)
-  const { token, user, logout } = useApp()
+  const { token, logout } = useApp()
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -20,12 +20,15 @@ const MyThumbnails = () => {
       setLoading(false)
     }
     fetchThumbnails()
-  }, [])
+  }, [token])
+
+  const getTimestamp = useRef(() => Date.now())
 
   const handleDownload = (imageData, title) => {
     const link = document.createElement('a')
     link.href = `data:image/png;base64,${imageData}`
-    link.download = `${title || 'thumbnail'}-${Date.now()}.png`
+    const timestamp = getTimestamp.current()
+    link.download = `${title || 'thumbnail'}-${timestamp}.png`
     link.click()
   }
 
