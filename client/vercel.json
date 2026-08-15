@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://thumblify-p0f78zgsc-sarita-14s-projects.vercel.app/api/:path*"
+      "destination": "https://thumblify-eight-xi.vercel.app/api/:path*"
     },
     {
       "source": "/(.*)",
