@@ -14,7 +14,7 @@ router.post('/generate', authMiddleware, async (req, res) => {
     const imageBlob = await client.textToImage({
       model: 'black-forest-labs/FLUX.1-schnell',
       inputs: fullPrompt,
-         provider: 'auto',
+            provider: 'fal-ai',
     })
     const imageBuffer = Buffer.from(await imageBlob.arrayBuffer())
     const imageData = imageBuffer.toString('base64')
